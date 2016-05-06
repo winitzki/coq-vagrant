@@ -18,11 +18,18 @@
 
 Make sure your VM instance is connected to the Internet (there may be a question about this during configuration of the instance).
 
-The Vagrant VM instance will be automatically provisioned to install Coq, Emacs, and Proof General. 
+The Vagrant VM instance will be automatically provisioned to install Coq, Emacs, and Proof General.
+It will also download the "Software Foundations" book and unpack the files into the directory `sf` under the user account.
 
 ## Running 
+
+Currently, the machine runs in text mode. One way to run it is to ssh to it:
 
 ```
 $ vagrant ssh
 vagrant@precise64:~$ proofgeneral
 ```
+
+This will start Emacs with Proof General.
+
+Another way is to use the graphical window. The username and password are both `vagrant` by default.
