@@ -2,7 +2,7 @@
 
 install="apt-get install --force-yes --yes"
 
-vagrantuser="$vagrant"
+vagrantuser="vagrant"
 
 function check_md5 {
   local file="$1" md5="$2"
@@ -30,7 +30,7 @@ function install_if_needed {
   fi
 }
 
-for p in emacs coq coqide proofgeneral proofgeneral-doc proofgeneral-coq nodm xserver-xorg xinit openbox xterm mupdf; do
+for p in emacs coq coqide proofgeneral proofgeneral-doc proofgeneral-coq nodm xserver-xorg xinit openbox xterm mupdf zathura; do
   install_if_needed $p
 done
 
@@ -60,4 +60,5 @@ sed -e ' s,\(<menu id=./Debian. />\).*,\1 <item label="Proof General" icon="/usr
 mv "$tmpobfile" "$obfile"
 
 # Need to restart for login changes to take effect
-reboot # This will cause an error in Vagrant. Ignore that.
+reboot
+# This will cause an error in Vagrant. Ignore that.
