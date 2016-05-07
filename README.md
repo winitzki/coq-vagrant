@@ -23,13 +23,17 @@ It will also download the "Software Foundations" book and unpack the files into 
 
 ## Running 
 
-Currently, the machine runs in text mode. One way to run it is to ssh to it:
+Currently, the machine runs in GUI mode with the minimalistic .
+
+You can also use text-only mode by doing ssh to it:
 
 ```
 $ vagrant ssh
 vagrant@precise64:~$ proofgeneral
 ```
 
-This will start Emacs with Proof General.
+This will start Emacs with Proof General as a text-only application.
 
-Another way is to use the graphical window. The username and password are both `vagrant` by default.
+Another way is to use the graphical window. The username and password are both `vagrant` by default, but the box should log you in automatically.
+
+You will see an empty window. Right-click with the mouse for a menu. You should see a "Proof General" menu item, which will start Emacs with Proof General.
