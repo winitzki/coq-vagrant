@@ -8,7 +8,7 @@
 ## Limitations
 
 - You will have to install Virtualbox and Vagrant (100+ MB download)
-- Your work and files will remain inside the virtual machine
+- Your work and files will remain inside the virtual machine (unless you move them yourself, see below)
 
 ## Initial setup
 
@@ -25,13 +25,11 @@ It will also download the "Software Foundations" book and unpack the files into 
 
 Currently, the machine runs in GUI mode with a very minimalistic graphical interface.
 
-This will start Emacs with Proof General as a text-only application.
-
 Another way is to use the graphical window. The username and password are both `vagrant` by default, but the box should log you in automatically.
 
 You will see an empty window. Right-click with the mouse for a menu. You should see a "Proof General" menu item, which will start Emacs with Proof General.
 
-The program `zathura` is available for viewing PDF files. 
+The program `zathura` is available for viewing PDF files. You will need to run "terminal" first (the first item in the right-click menu).
 
 ```
 vagrant@precise64:~$ zathura cpdt.pdf &
@@ -45,9 +43,12 @@ vagrant@precise64:~$ mupdf -b 8 -r 200 cpdt.pdf &
 
 Both `zathura` and `mupdf` have a very basic interface but are fast.
 
+
 You can also use text-only mode by doing ssh to it:
 
 ```
 $ vagrant ssh
 vagrant@precise64:~$ proofgeneral
 ```
+This will start Emacs with Proof General as a text-only application.
+
