@@ -60,5 +60,5 @@ sed -e ' s,\(<menu id=./Debian. />\).*,\1 <item label="Proof General" icon="/usr
 mv "$tmpobfile" "$obfile"
 
 # Need to restart for login changes to take effect
-reboot
+# reboot
 # This will cause an error in Vagrant. Ignore that.

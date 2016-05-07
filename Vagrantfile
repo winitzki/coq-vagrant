@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "hashicorp/precise64"
+  config.vm.box = "ubuntu/trusty64"
   config.vm.provider "virtualbox" do |v|
     v.name = "Coq_Emacs_ProofGeneral"
     v.gui = true
