@@ -14,7 +14,7 @@
 
 1. Make sure you have VirtualBox 4.3+ and Vagrant installed.
 
-2. Check out this repository and run the command `vagrant up` in the root directory of this repository.
+2. Check out this repository and run the command `vagrant up` in the root directory of this repository. The commands are like this:
 
 ```
 $ git clone https://github.com/winitzki/coq-vagrant.git
@@ -24,8 +24,18 @@ $ vagrant up
 
 Make sure your VM instance is connected to the Internet (there may be a question about this during configuration of the instance).
 
+If this is your first time using Vagrant, you will need to wait for a large download of Ubuntu Linux.
+
 The Vagrant VM instance will be automatically provisioned to install Coq, Emacs, and Proof General.
 It will also download the "Software Foundations" book and unpack the files into the directory `sf` under the user account.
+
+After this initial step, you may need to shut down the virtual machine and start it up again from Virtualbox, in order for all changes to take effect.
+To stop or start the VM from the command line, use these commands:
+
+```
+$ vagrant halt
+$ vagrant up
+```
 
 ## Running the VM
 
@@ -70,3 +80,29 @@ On your machine, suppose that you cloned the repository to `/path/to/coq-vagrant
 On the VM, this file will appear as `/vagrant/some_file`
 
 Vice versa, any files you copy to `/vagrant/` on your VM will appear in `/path/to/coq-vagrant/`.
+
+## Troubleshooting
+
+If you need to change the `Vagrantfile`, reload the VM by the command
+
+```
+$ vagrant reload
+```
+
+"Provisioning" consists of executing the scripts `init_as_root.sh` and `init_as_user.sh`.
+
+You can also repeat the provisioning when you start the VM:
+
+```
+$ vagrant up --provision
+```
+
+This will not download all the Ubuntu packages again - it will only redo the initial setup.
+
+If all fails, you can remove the VM and start again:
+
+```
+$ vagrant destroy
+$ vagrant up
+```
+
